@@ -16,6 +16,7 @@ function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
 }
 
+
 function* fetchAllMovies() {
     // get all movies from the DB
     try {
