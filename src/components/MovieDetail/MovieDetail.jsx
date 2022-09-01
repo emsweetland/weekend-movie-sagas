@@ -1,18 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import {useHistory} from 'react-router-dom'
 
 function MovieDetail() {
-
-    const dispatch = useDispatch();
-    const movies = useSelector(store => store.movies);
-
-    useEffect(() => {
-        dispatch({ type: 'FETCH_MOVIES' });
-    }, []);
+    const history = useHistory();
+        const dispatch = useDispatch();
+    const thisMovie = useSelector(store => store.thisMovie);
 
 
-    console.log(movies.id, movies.title)
+
 // show movie genres
 // movie title
 // movie description
@@ -27,8 +23,18 @@ function MovieDetail() {
     return (
         <main>
             <h1>MovieList</h1>
+            <p>{thisMovie.title}</p>
+            <p>{thisMovie.description}</p>
+            <img src={thisMovie.poster}></img>
+            <ul>
+                {thisMovie.genres?.map(movie => {
+                    
+                    return (<li key={movie}>{movie}</li>)
+                
+    }    )}
+            </ul>
 
-
+        <button onClick= {()=> history.push('/')}> GO BACK </button>
 
         </main>
 
