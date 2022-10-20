@@ -20,7 +20,6 @@
 5. Run `npm run client` in your terminal, this will open up a new browser tab for you!
 
 ## Usage
-How does someone use this application? Tell a user story here.
 
 1. When a movie poster is clicked, a user is brought to the /details view for that movie.
 2. This shows all details including ALL genres for the selected movie, including title, description, and the image, too! 
